@@ -1,14 +1,23 @@
-using System;
+using System.Collections.Generic;
+using Gameplay.CellGrid;
+using Gameplay.CellGrid.Markers;
 using UI;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Gameplay.Tiles
 {
     public class Tile : MonoBehaviour, ISelectable
     {
         public bool IsSelected;
+        public CellCreator CellCreator;
 
+        public List<Marker> Markers = new();
+
+        public void Init(CellCreator cellCreator)
+        {
+            CellCreator = cellCreator;
+        }
+        
         public void Select()
         {
             if (IsSelected) return;

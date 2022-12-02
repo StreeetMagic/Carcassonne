@@ -8,6 +8,8 @@ namespace Gameplay.Decks
     {
         public List<Tile> Tiles;
 
+        public Tile FirstTile;
+        
         public Tile GetRandomTile()
         {
             if (Tiles.Count < 1)
@@ -18,7 +20,7 @@ namespace Gameplay.Decks
             Tiles.Remove(tile);
         
             return tile;
-
         }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 namespace Gameplay.Tiles
@@ -8,11 +9,18 @@ namespace Gameplay.Tiles
         [field: SerializeField] public SideNames[] Sides { get; private set; }
         [field: SerializeField] public bool[] SideStatuses { get; private set; } = { true, true, true, true };
         [field: SerializeField] public int RotateCount { get; private set; }
-        [field: SerializeField] public TextMeshProUGUI Text { get; private set; }
+        
+        [field: SerializeField] public TextMeshProUGUI TopText { get; private set; }
+        [field: SerializeField] public TextMeshProUGUI RightText { get; private set; }
+        [field: SerializeField] public TextMeshProUGUI BottomText { get; private set; }
+        [field: SerializeField] public TextMeshProUGUI LeftText { get; private set; }
 
-        private void Update()
+        private TextMeshProUGUI[] Texts;
+
+        private void Awake()
         {
-            PrintSideName();
+            Texts = new[] { TopText, RightText, BottomText, LeftText };
+            PrintSideNames();
         }
 
         public void Rotate()
@@ -30,9 +38,13 @@ namespace Gameplay.Tiles
             return SideStatuses[sideNumber + RotateCount];
         }
 
-        public void PrintSideName()
+        private void PrintSideNames()
         {
-            Text.text = Sides[0].ToString();
+            for (var index = 0; index < Texts.Length; index++)
+            {
+                var t = Texts[index];
+                t.text = index + " " + Sides[index].ToString();
+            }
         }
     }
 }

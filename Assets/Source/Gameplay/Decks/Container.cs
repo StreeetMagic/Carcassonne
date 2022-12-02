@@ -5,6 +5,6 @@ namespace Gameplay.Decks
 {
     public class Container : MonoBehaviour
     {
-        public List<GameObject> Tiles;
     }
+    
 }
