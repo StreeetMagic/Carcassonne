@@ -1,23 +1,26 @@
+using System;
+using UI;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Gameplay.Tiles
 {
-    public class Tile : MonoBehaviour
+    public class Tile : MonoBehaviour, ISelectable
     {
-        [field:SerializeField] public SideNames[] Sides { get; private set; }
+        public bool IsSelected;
 
-        public int RotateCount = 0;
-
-        public SideNames GetSide(int side, int rotateCount)
+        public void Select()
         {
-            return Sides[side + rotateCount];
+            if (IsSelected) return;
+            transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+            IsSelected = true;
         }
 
-        public void Rotate()
+        public void DeSelect()
         {
-            RotateCount++;
+            if (!IsSelected) return;
+            transform.localScale = new Vector3(1, 1, 1);
+            IsSelected = false;
         }
-
-
     }
 }

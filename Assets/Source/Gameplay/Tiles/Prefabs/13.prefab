@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8927942822973250517}
   - component: {fileID: 587291493130267861}
   - component: {fileID: 1434397533132664431}
+  - component: {fileID: 6023364332511236282}
+  - component: {fileID: 501665117271351231}
   m_Layer: 0
   m_Name: 13
   m_TagString: Untagged
@@ -97,5 +99,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 228c572203e30b648834cb0f2e50c776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Sides>k__BackingField: 01000000010000000100000002000000
-  RotateCount: 0
+  IsSelected: 0
+--- !u!61 &6023364332511236282
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26559135044223376}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &501665117271351231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26559135044223376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8bd576ae834e768e4e35ad7791414a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Sides>k__BackingField: 
+  <SideStatuses>k__BackingField: 01010101
+  <RotateCount>k__BackingField: 0
+  <Text>k__BackingField: {fileID: 0}

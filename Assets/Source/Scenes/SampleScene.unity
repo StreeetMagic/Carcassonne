@@ -599,7 +599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Deck: {fileID: 594409815}
   NextTile: {fileID: 0}
-  Container: {fileID: 0}
+  Container: {fileID: 159467198}
 --- !u!4 &610657411
 Transform:
   m_ObjectHideFlags: 0
@@ -700,7 +700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4211057ffadad345bfdc9bdd010a6c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cells: []
+  Cells:
+  - {fileID: 2001215997}
   CellContainer: {fileID: 28453313}
   CellPrefab: {fileID: 6701870141946500022, guid: 759a7a0d78c911a459ed11cd5de24e92, type: 3}
 --- !u!4 &1086982935
@@ -711,7 +712,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086982933}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.505362, y: 0.49988967, z: -0.004887349}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1048,3 +1049,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6701870141946500021, guid: 759a7a0d78c911a459ed11cd5de24e92, type: 3}
   m_PrefabInstance: {fileID: 2001215995}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2001215997 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6701870141946500022, guid: 759a7a0d78c911a459ed11cd5de24e92, type: 3}
+  m_PrefabInstance: {fileID: 2001215995}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9f4680e27334ccd88bf14006708cbaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
