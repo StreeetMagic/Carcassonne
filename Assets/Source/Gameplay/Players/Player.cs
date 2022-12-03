@@ -12,6 +12,8 @@ namespace Gameplay.Players
         public Camera Camera;
         public ISelectable Selectable;
         public Deck Deck;
+        public bool IsYourTurn;
+        public string NickName;
 
         public void Init(Deck deck)
         {
@@ -25,6 +27,16 @@ namespace Gameplay.Players
             NextTile.transform.SetParent(Container.transform);
             NextTile.gameObject.SetActive(true);
             NextTile.transform.localPosition = Vector3.zero;
+        }
+
+        public void SetActiveTurn()
+        {
+            IsYourTurn = true;
+        }
+        
+        public void SetInActiveTurn()
+        {
+            IsYourTurn = false;
         }
     }
 }

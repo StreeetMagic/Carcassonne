@@ -1,7 +1,7 @@
 ﻿using UI;
 using UnityEngine;
 
-namespace Gameplay.Players
+namespace Gameplay.Players.Humans
 {
     public class Human : Player
     {

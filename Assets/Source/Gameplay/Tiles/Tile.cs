@@ -8,10 +8,10 @@ namespace Gameplay.Tiles
 {
     public class Tile : MonoBehaviour, ISelectable
     {
-        public bool IsSelected;
-        public CellCreator CellCreator;
+        [field: SerializeField] public bool IsSelected { get; private set; }
+        [field: SerializeField] public CellCreator CellCreator{ get; private set; }
 
-        public List<Marker> Markers = new();
+        private List<Marker> _markers = new();
 
         public void Init(CellCreator cellCreator)
         {
@@ -30,6 +30,11 @@ namespace Gameplay.Tiles
             if (!IsSelected) return;
             transform.localScale = new Vector3(1, 1, 1);
             IsSelected = false;
+        }
+
+        public void AddMarker(Marker marker)
+        {
+            _markers.Add(marker);
         }
     }
 }

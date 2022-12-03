@@ -15,11 +15,11 @@ namespace Gameplay.Tiles
         [field: SerializeField] public TextMeshProUGUI BottomText { get; private set; }
         [field: SerializeField] public TextMeshProUGUI LeftText { get; private set; }
 
-        private TextMeshProUGUI[] Texts;
+        private TextMeshProUGUI[] _texts;
 
         private void Awake()
         {
-            Texts = new[] { TopText, RightText, BottomText, LeftText };
+            _texts = new[] { TopText, RightText, BottomText, LeftText };
             PrintSideNames();
         }
 
@@ -40,9 +40,9 @@ namespace Gameplay.Tiles
 
         private void PrintSideNames()
         {
-            for (var index = 0; index < Texts.Length; index++)
+            for (var index = 0; index < _texts.Length; index++)
             {
-                var t = Texts[index];
+                var t = _texts[index];
                 t.text = index + " " + Sides[index].ToString();
             }
         }

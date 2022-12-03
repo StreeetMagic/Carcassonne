@@ -6,15 +6,15 @@ namespace Gameplay.CellGrid.Cells
 {
     public class Cell : MonoBehaviour
     {
-        public Tile Tile;
-        public Marker Marker;
-        public CellCreator CellCreator;
+        [field: SerializeField] public Tile Tile { get; private set; }
+        [field: SerializeField] public Marker Marker { get; private set; }
+        [field: SerializeField] public CellCreator CellCreator { get; private set; }
 
         public void SetCellCreator(CellCreator cellCreator)
         {
             CellCreator = cellCreator;
         }
-        
+
         public void SetTile(Tile tile)
         {
             Tile = tile;

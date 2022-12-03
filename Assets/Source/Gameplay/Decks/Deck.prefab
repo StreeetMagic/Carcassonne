@@ -95,14 +95,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1606ea03e02b34a4e9602503e21e3e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tiles:
+  _tiles:
   - {fileID: 4206277557083205641}
   - {fileID: 6318970721717729912}
   - {fileID: 8223148467247967742}
   - {fileID: 1073123116061363291}
   - {fileID: 5950726912602242989}
-  - {fileID: 5950726912602242989}
-  FirstTile: {fileID: 3453375572905369761}
+  <FirstTile>k__BackingField: {fileID: 3453375572905369761}
 --- !u!1001 &816249455086209636
 PrefabInstance:
   m_ObjectHideFlags: 0

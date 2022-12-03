@@ -6,18 +6,18 @@ namespace Gameplay.Decks
 {
     public class Deck : MonoBehaviour
     {
-        public List<Tile> Tiles;
+        [SerializeField] private List<Tile> _tiles;
 
-        public Tile FirstTile;
+        [field: SerializeField] public Tile FirstTile { get; private set; }
         
         public Tile GetRandomTile()
         {
-            if (Tiles.Count < 1)
+            if (_tiles.Count < 1)
                 return null;
         
-            var randomTileNumber = Random.Range(0, Tiles.Count);
-            var tile = Tiles[randomTileNumber];
-            Tiles.Remove(tile);
+            var randomTileNumber = Random.Range(0, _tiles.Count);
+            var tile = _tiles[randomTileNumber];
+            _tiles.Remove(tile);
         
             return tile;
         }

@@ -9,40 +9,46 @@ namespace Gameplay.CellGrid
 {
     public class MarkerCreator : MonoBehaviour
     {
-        public CellCreator CellCreator;
-        public Marker MarkerPrefab;
-        public List<Marker> Markers;
+        [field: SerializeField] public CellCreator CellCreator { get; private set; }
+        [field: SerializeField] public Marker MarkerPrefab { get; private set; }
 
-        public void CreateMarkers(Tile tile)
+        private List<Marker> _markers;
+
+        public void CreateMarkers()
         {
-            CheckNeighbours(tile);
+            var tiles = CellCreator.GetPlacedTiles();
+            
+            foreach (var tile in tiles)
+            {
+                TryCreateMarkers(tile);
+            }
         }
 
-        private void CheckNeighbours(Tile tile)
+        private void TryCreateMarkers(Tile tile)
         {
-            TryCreateMarker(tile, 1 ,0 );
-            TryCreateMarker(tile, 0 ,1 );
-            TryCreateMarker(tile, -1 ,0 );
-            TryCreateMarker(tile, 0 ,-1 );
+            TryCreateMarker(tile, 1, 0);
+            TryCreateMarker(tile, 0, 1);
+            TryCreateMarker(tile, -1, 0);
+            TryCreateMarker(tile, 0, -1);
         }
 
         private void TryCreateMarker(Tile tile, int XDelta, int YDelta)
         {
             var cell = TryGetCell(tile, XDelta, YDelta);
 
-            if (cell == null) 
+            if (cell == null)
                 return;
-            
-            if (cell.Tile != null) 
+
+            if (cell.Tile != null)
                 return;
-            
+
             var marker = CreateMarker(tile, cell);
         }
 
-        private Cell TryGetCell(Tile tile, int XDelta, int YDelta)
+        private Cell TryGetCell(Tile tile, int xDelta, int yDelta)
         {
             var position = tile.transform.position;
-            CellCreator.CheckCell(position.x + XDelta, position.y + YDelta, out Cell cell);
+            CellCreator.CheckCell(position.x + xDelta, position.y + yDelta, out Cell cell);
 
             return cell == null ? null : cell;
         }
@@ -55,7 +61,7 @@ namespace Gameplay.CellGrid
                 quaternion.identity,
                 tile.transform);
 
-            tile.Markers.Add(marker);
+            tile.AddMarker(marker);
 
             return marker;
         }
